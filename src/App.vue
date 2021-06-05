@@ -1,9 +1,11 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Events</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <div id="nav">
+      <router-link :to="{ name: 'EventList' }">Events</router-link> |
+      <router-link :to="{ name: 'About' }">About</router-link>
+    </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
 <style>
@@ -22,9 +24,11 @@
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+  border-bottom: 2px solid #42b983;
 }
 </style>
